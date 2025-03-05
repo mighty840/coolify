@@ -127,16 +127,16 @@
         </span>
     @endif
     <script>
-        function disableSponsorship() {
+        // function disableSponsorship() {
             localStorage.setItem('popupSponsorship', false);
-        }
+        // }
 
-        function disableNotification() {
-            localStorage.setItem('popupNotification', false);
-        }
+        // function disableNotification() {
+        //     localStorage.setItem('popupNotification', false);
+        // }
 
-        function disableRealtime() {
-            localStorage.setItem('popupRealtime', 'disabled');
-        }
+        // function disableRealtime() {
+        //     localStorage.setItem('popupRealtime', 'disabled');
+        // }
     </script>
 </div>

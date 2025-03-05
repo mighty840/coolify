@@ -117,6 +117,11 @@ function isInstanceAdmin()
     return auth()?->user()?->isInstanceAdmin() ?? false;
 }
 
+function isEtoAdmin()
+{
+    return auth()?->user()?->isEtoAdmin() ?? false;
+}
+
 function currentTeam()
 {
     return Auth::user()?->currentTeam() ?? null;

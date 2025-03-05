@@ -1,12 +1,12 @@
 @php use App\Enums\ProxyTypes; @endphp
 <x-slot:title>
-    Onboarding | Coolify
+    Onboarding | Etospheres
 </x-slot>
 <section class="flex flex-col h-full lg:items-center lg:justify-center">
     <div
         class="flex flex-col items-center justify-center p-10 mx-2 mt-10 bg-white border rounded-lg shadow lg:p-20 dark:bg-transparent dark:border-none max-w-7xl ">
         @if ($currentState === 'welcome')
-            <h1 class="text-3xl font-bold lg:text-5xl">Welcome to Coolify</h1>
+            <h1 class="text-3xl font-bold lg:text-5xl">Welcome to Etospheres</h1>
             <div class="py-6 text-center lg:text-xl">Let me help you set up the basics.</div>
             <div class="flex justify-center ">
                 <x-forms.button class="justify-center w-64 box-boarding"
@@ -15,27 +15,24 @@
                 </x-forms.button>
             </div>
         @elseif ($currentState === 'explanation')
-            <x-boarding-step title="What is Coolify?">
+            <x-boarding-step title="What is Etospheres?">
                 <x-slot:question>
-                    Coolify is an all-in-one application to automate tasks on your servers, deploy applications with
+                    Etospheres is an all-in-one application to automate tasks on your servers, deploy applications with
                     Git
                     integrations, deploy databases and services, monitor these resources with notifications and
                     alerts
                     without vendor lock-in. <br/>
-                <a href="https://coolify.io" class="dark:text-white hover:underline">Coolify Home</a>.
-                    <br><br>
-                    <span class="text-xl">
-                        <x-highlighted text="Self-hosting with superpowers!" /></span>
+                
                 </x-slot:question>
                 <x-slot:explanation>
                     <p>
                         <x-highlighted text="Task automation:" /> You don't need to manage your servers anymore.
-                        Coolify does
+                        Etospheres does
                         it for you.
                     </p>
                     <p>
                         <x-highlighted text="No vendor lock-in:" /> All configurations are stored on your servers, so
-                        everything works without a connection to Coolify (except integrations and automations).
+                        everything works without a connection to Etospheres (except integrations and automations).
                     </p>
                     <p>
                         <x-highlighted text="Monitoring:" />You can get notified on your favourite platforms
@@ -91,7 +88,7 @@
                                     <li>The correct public key is in your <code
                                             class="bg-red-200 dark:bg-red-900 px-1 rounded">~/.ssh/authorized_keys</code>
                                         file for the specified user</li>
-                                    <li>Or skip the boarding process and manually add a new private key to Coolify and
+                                    <li>Or skip the boarding process and manually add a new private key to Etospheres and
                                         the server</li>
                                 </ul>
                             </div>
@@ -115,7 +112,7 @@
                         services, called resources. Any CPU intensive process will use the server's CPU where you
                         are deploying your resources.</p>
                     <p>
-                        <x-highlighted text="Localhost" /> is the server where Coolify is running on. It is not
+                        <x-highlighted text="Localhost" /> is the server where Etospheres is running on. It is not
                         recommended to use one server
                         for everything.
                     </p>
@@ -152,7 +149,7 @@
                 </x-slot:actions>
                 <x-slot:explanation>
                     <p>SSH Keys are used to connect to a remote server through a secure shell, called SSH.</p>
-                    <p>You can use your own ssh private key, or you can let Coolify to create one for you.</p>
+                    <p>You can use your own ssh private key, or you can let Etospheres to create one for you.</p>
                     <p>In both ways, you need to add the public version of your ssh private key to the remote
                         server's
                         <code class="dark:text-warning">~/.ssh/authorized_keys</code> file.
@@ -209,7 +206,7 @@
                                     <li>The correct public key is in your <code
                                             class="bg-red-200 dark:bg-red-900 px-1 rounded">~/.ssh/authorized_keys</code>
                                         file for the specified user</li>
-                                    <li>Or skip the boarding process and manually add a new private key to Coolify and
+                                    <li>Or skip the boarding process and manually add a new private key to Etospheres and
                                         the server</li>
                                 </ul>
                             </div>
@@ -230,7 +227,7 @@
                 </x-slot:actions>
                 <x-slot:explanation>
                     <p>Private Keys are used to connect to a remote server through a secure shell, called SSH.</p>
-                    <p>You can use your own private key, or you can let Coolify to create one for you.</p>
+                    <p>You can use your own private key, or you can let Etospheres to create one for you.</p>
                     <p>In both ways, you need to add the public version of your private key to the remote server's
                         <code>~/.ssh/authorized_keys</code> file.
                     </p>
@@ -261,7 +258,7 @@
                 </x-slot:actions>
                 <x-slot:explanation>
                     <p>Private Keys are used to connect to a remote server through a secure shell, called SSH.</p>
-                    <p>You can use your own private key, or you can let Coolify to create one for you.</p>
+                    <p>You can use your own private key, or you can let Etospheres to create one for you.</p>
                     <p>In both ways, you need to add the public version of your private key to the remote server's
                         <code>~/.ssh/authorized_keys</code> file.
                     </p>
