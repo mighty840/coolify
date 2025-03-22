@@ -71,5 +71,6 @@ class Kernel extends HttpKernel
         'ability' => \Laravel\Sanctum\Http\Middleware\CheckForAnyAbility::class,
         'api.ability' => \App\Http\Middleware\ApiAbility::class,
         'api.sensitive' => \App\Http\Middleware\ApiSensitiveData::class,
+        'ip_whitelist' => \App\Http\Middleware\IpWhitelist::class
     ];
 }

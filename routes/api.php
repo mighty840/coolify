@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\ApplicationsController;
 use App\Http\Controllers\Api\DatabasesController;
 use App\Http\Controllers\Api\DeployController;
+use App\Http\Controllers\Api\EtoRegisterController;
 use App\Http\Controllers\Api\OtherController;
 use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\ResourcesController;
@@ -17,6 +18,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/health', [OtherController::class, 'healthcheck']);
 Route::post('/feedback', [OtherController::class, 'feedback']);
+
+Route::group([
+    'middleware' => ['ip_whitelist'],
+    'prefix' => 'v1',
+], function () {
+    Route::post('/users', [EtoRegisterController::class, 'create_user']);
+});
 
 Route::group([
     'middleware' => ['auth:sanctum', 'api.ability:write'],

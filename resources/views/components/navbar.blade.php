@@ -78,8 +78,9 @@
 }">
     <div class="flex pt-6 pb-4 pl-2">
         <div class="flex flex-col w-full">
-            <div class="text-2xl font-bold tracking-wide dark:text-white">Coolify</div>
-            <x-version />
+            <div class="text-1xl font-bold tracking-wide dark:text-white">Etospheres</div>
+            <div class="flex"><img width="30px" src="{{ asset('eto_w.png') }}" alt="Etospheres" /></div>            
+            <!-- <x-version /> -->
         </div>
         <div class="pt-1">
             <x-dropdown>
@@ -321,7 +322,7 @@
                             </a>
                         </li>
                     @endif
-                    @if (isInstanceAdmin())
+                    @if (isEtoAdmin())
                         <li>
 
                             <a title="Settings" wire:navigate
@@ -341,7 +342,7 @@
                     @endif
 
                     @if (isCloud() || isDev())
-                        @if (isInstanceAdmin() || session('impersonating'))
+                        @if (isEtoAdmin() || session('impersonating'))
                             <li>
                                 <a wire:navigate title="Admin" class="menu-item" href="/admin">
                                     <svg class="text-pink-600 icon" viewBox="0 0 256 256"
@@ -355,7 +356,7 @@
                         @endif
                     @endif
                     <div class="flex-1"></div>
-                    @if (isInstanceAdmin() && !isCloud())
+                    @if (isEtoAdmin() && !isCloud())
                         @persist('upgrade')
                             <li>
                                 <livewire:upgrade />
@@ -373,7 +374,7 @@
                             Onboarding
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a title="Sponsor us" class="menu-item" href="https://coolify.io/sponsorships"
                             target="_blank">
                             <svg class="text-pink-500 icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -386,7 +387,7 @@
                             </svg>
                             Sponsor us
                         </a>
-                    </li>
+                    </li> -->
                 @endif
                 @if (!isSubscribed() && isCloud() && auth()->user()->teams()->get()->count() > 1)
                     <livewire:navbar-delete-team />

@@ -194,6 +194,27 @@ class User extends Authenticatable implements SendsEmail
         return $found_root_team->count() > 0;
     }
 
+    public function isEtoAdmin()
+    {
+        $found_root_team = Auth::user()->teams->filter(function ($team) {
+            if ($team->id == 0) {
+                if (! Auth::user()->isAdmin()) {
+                    return false;
+                }
+
+                if ($this->email !== 'admin@etospheres.com') {
+                    return false;
+                }
+
+                return true;
+            }
+
+            return false;
+        });
+
+        return $found_root_team->count() > 0;
+    }
+
     public function currentTeam()
     {
         return Cache::remember('team:'.Auth::id(), 3600, function () {
